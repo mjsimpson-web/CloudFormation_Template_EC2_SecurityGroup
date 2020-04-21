@@ -1,0 +1,45 @@
+{
+  "Parameters": {
+    "SecurityGroups": {
+      "Type": "List<AWS::EC2::SecurityGroup::Id>"
+    },
+    "Image": {
+      "Type": "List<AWS::EC2::Image::Id>"
+    }
+  },
+  "Resources": {
+    "MyEC2Instance": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "ImageId": {
+          "Ref": "Image"
+        },
+        "KeyName": "mykey",
+        "SecurityGroupIds": {
+          "Ref": "SecurityGroups"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "8455f0bd-d91e-4678-815e-e0c8cbb50078"
+        }
+      }
+    }
+  },
+  "Metadata": {
+    "AWS::CloudFormation::Designer": {
+      "8455f0bd-d91e-4678-815e-e0c8cbb50078": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 340,
+          "y": 160
+        },
+        "z": 1,
+        "embeds": []
+      }
+    }
+  }
+}
